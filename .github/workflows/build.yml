@@ -10,7 +10,7 @@ env:
   ECR_REPOSITORY: 834352307282.dkr.ecr.us-east-1.amazonaws.com/jeetrepo  # Update with your ECR repository URI
   IMAGE_TAG: latest  # You can modify this to use a unique tag if needed
   AWS_ACCESS_KEY_ID: AKIA4EQ2F3RJLP7OP23D  # Replace with your actual AWS access key ID
-  AWS_SECRET_ACCESS_KEY: JCpQcpS3fKrCfssRQ+pjD1TI5GqQAV9IORPVvrbB  # Replace with your actual AWS secret access key
+  AWS_SECRET_ACCESS_KEY: JCpQcpS3fKrCfssRQ+pjD1TI5GqQAV9IORPVvrbB # Replace with your actual AWS secret access key
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Set up AWS CLI
         run: |
-          echo "Configuring AWS CLI..."
+          mkdir -p ~/.aws  # Create the .aws directory if it doesn't exist
           echo "[default]" > ~/.aws/config
           echo "region = $AWS_REGION" >> ~/.aws/config
           echo "[default]" > ~/.aws/credentials
